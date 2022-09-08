@@ -1,0 +1,37 @@
+<html>
+<head>
+    <!-- <meta http-equiv="refresh" content="5"> -->
+<style>
+.wait {
+  color: gray;
+  text-align: left;
+} 
+.run {
+  color: black;
+  text-align: left;
+  font-weight: bold;
+} 
+.done {
+  color: green;
+  text-align: left;
+} 
+.error {
+  color: red;
+  text-align: left;
+} 
+</style>
+</head>
+<body>
+<h1>{{.PageTitle}}</h1>
+<p><a href="/add" target="_blank">Добавить новый ресурс</a></p>
+<ul>
+    {{range .WorkList}}
+        {{if .Done}}
+            <li class="{{.Status}}">{{.Title}} - {{.Status}} [{{.Id}}]</li>
+        {{else}}
+            <li class="{{.Status}}"><a href="/view?id={{.Id}}" target="_blank">{{.Title}} - {{.Status}}</a> <a href="/remove?id={{.Id}}">&#x2716;</a></li>
+        {{end}}
+    {{end}}
+</ul>
+</body>
+</html>

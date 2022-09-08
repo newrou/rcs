@@ -1,0 +1,30 @@
+{{if .Success}}
+<html>
+  <head>
+    <title>Ресурс добавлен.</title>
+    <meta http-equiv="refresh" content="3; url=/add">
+  </head>
+  <body>
+  <h1>Ресурс добавлен.</h1>
+  </body>
+</html>
+{{else}}
+<html>
+  <head>
+    <title>Добавить новый ресурс</title>
+  </head>
+  <body>
+    <h1>Добавить новый ресурс:</h1>
+    <form method="POST">
+        <label>Название:</label> <input type="text" name="Title"> <br/>
+        <label>Путь:</label> <input type="text" name="Path"> <br/>
+        <label>Периодичность:</label> <input type="text" name="TimeTable"> <br/>
+        <label>Максимальное число снимков:</label> <input type="text" name="MaxSnap"> <br/>
+        <label>Сервисы требующие перезапуска:</label> <br/>
+        <textarea name="Services" rows="7" cols="120"></textarea> <br/>
+        <input type="hidden" name="Status" value="wait">
+        <input value="Добавить" type="submit" name="Send">
+    </form>
+  </body>
+</html>
+{{end}}
