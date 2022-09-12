@@ -10,6 +10,7 @@ import (
     "crypto/md5"
     "log"
     "os"
+    "bufio"
 //    "strconv"
 //    "reflect"
 )
@@ -66,6 +67,19 @@ func GetWorkList(works []Work) []Work {
     return works
 }
 
+func GetLog() string {
+    Log := ""
+    file, err := os.Open(".rcs/rcs-server.log")
+    if err != nil { log.Fatal(err) }
+    defer file.Close()
+    scanner := bufio.NewScanner(file)
+    for scanner.Scan() {
+        Log = Log + fmt.Sprintf("%s\n", scanner.Text())
+    }
+    if err := scanner.Err(); err != nil { log.Fatal(err) }
+    return Log
+}
+
 func main() {
     file, err := os.OpenFile(conf_dir + "rcs-server.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
     // if err != nil { log.Fatal(err) }
@@ -79,7 +93,7 @@ func main() {
 	tmpl_list := template.Must(template.ParseFiles("form_list.html"))
 	data.WorkList = GetWorkList(data.WorkList)
         tmpl_list.Execute(w, data)
-	log.Println("Просмотр списка ресурсов")
+//	log.Println("Просмотр списка ресурсов")
     })
 
 
@@ -101,6 +115,31 @@ func main() {
 //	    fmt.Fprintf(w, "</ul>")
 	}
 	log.Println("Просмотр ресурса: ", Id)
+    })
+
+
+    http.HandleFunc("/edit", func(w http.ResponseWriter, r *http.Request) {
+	tmpl_view := template.Must(template.ParseFiles("form_edit.html"))
+        if r.Method != http.MethodGet {
+            tmpl_view.Execute(w, nil)
+            return
+        }
+	Id := r.FormValue("id")
+	work := LoadWork(Id)
+        tmpl_view.Execute(w, work)
+	log.Println("Редактирование ресурса: ", Id)
+    })
+
+
+    http.HandleFunc("/log", func(w http.ResponseWriter, r *http.Request) {
+        data := PageData{
+            PageTitle: "Журнал:",
+            Message: "",
+        }
+	tmpl_list := template.Must(template.ParseFiles("form_log.html"))
+	data.Message = GetLog()
+        tmpl_list.Execute(w, data)
+//	log.Println("Просмотр журнала")
     })
 
 
