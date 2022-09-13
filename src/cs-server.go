@@ -106,28 +106,15 @@ func main() {
 	Id := r.FormValue("id")
 	work := LoadWork(Id)
         tmpl_view.Execute(w, work)
-	if work.Status=="prepared" {
+//	if work.Status=="prepared" {
 //	    n, _ := strconv.Atoi(work.MaxSnap)
 //	    fmt.Fprintf(w, "<ul>")
 //	    for i := 1; i<(n+1); i++ {
 //		fmt.Fprintf(w, "<li><a href=\"/get-work-file?id=%s&file=v%d.xyz\" target=\"_blank\">v%d.xyz</a></li>", Id, i, i)
 //	    }
 //	    fmt.Fprintf(w, "</ul>")
-	}
+//	}
 	log.Println("Просмотр ресурса: ", Id)
-    })
-
-
-    http.HandleFunc("/edit", func(w http.ResponseWriter, r *http.Request) {
-	tmpl_view := template.Must(template.ParseFiles("form_edit.html"))
-        if r.Method != http.MethodGet {
-            tmpl_view.Execute(w, nil)
-            return
-        }
-	Id := r.FormValue("id")
-	work := LoadWork(Id)
-        tmpl_view.Execute(w, work)
-	log.Println("Редактирование ресурса: ", Id)
     })
 
 
@@ -221,6 +208,37 @@ func main() {
         _ = work
         tmpl_add.Execute(w, struct{ Success bool }{true})
 	log.Println("Добавление нового ресурса: ", work.Id)
+    })
+
+
+    http.HandleFunc("/edit", func(w http.ResponseWriter, r *http.Request) {
+        if r.Method != http.MethodPost {
+	    tmpl_edit := template.Must(template.ParseFiles("form_edit.html"))
+	    Id := r.FormValue("id")
+	    work := LoadWork(Id)
+//	    fmt.Println(work)
+            tmpl_edit.Execute(w, work)
+            return
+        }
+	tmpl_edit_save := template.Must(template.ParseFiles("form_edit_save.html"))
+	work := Work{
+	    Id :        r.FormValue("id"),
+	    Title:      r.FormValue("Title"),
+	    Path:       r.FormValue("Path"),
+	    TimeTable:  r.FormValue("TimeTable"),
+	    MaxSnap:    r.FormValue("MaxSnap"),
+	    Services:   r.FormValue("Compounds"),
+	    Status:     r.FormValue("Status"),
+	}
+	fmt.Println(work)
+	dat, err := json.MarshalIndent(work, "", " ")
+	if err != nil { fmt.Println(err) }
+	fname := fmt.Sprintf("%s/%s", works_dir, work.Id)
+	_ = ioutil.WriteFile(fname, dat, 0644)
+//	_ = work
+	tmpl_edit_save.Execute(w, work)
+	log.Println("Редактирование ресурса: ", work.Id)
+//	fmt.Println(dat)
     })
 
 

@@ -1,0 +1,32 @@
+{{if .Success}}
+<html>
+  <head>
+    <title>Ресурс сохранен.</title>
+    <meta http-equiv="refresh" content="3; url=/edit?id={{.Id}}">
+  </head>
+  <body>
+  <h1>Ресурс сохранен.</h1>
+  </body>
+</html>
+{{else}}
+<html>
+  <head>
+    <title>Ресурс</title>
+  </head>
+  <body>
+    <h1>Ресурс:</h1>
+    <form method="POST">
+        <label>Идентификатор: {{.Id}}</label> <input type="hidden" name="Id" value="{{.Id}}"> <br/>
+        <!-- <label>Статус: {{.Status}}</label> --> <input type="hidden" name="Status" value="{{.Status}}"> <!-- <br/> -->
+        <label>Название:</label> <input type="text" name="Title" value="{{.Title}}"> <br/>
+        <label>Путь:</label> <input type="text" name="Path" value="{{.Path}}"> <br/>
+        <label>Расписание:</label> <input type="text" name="TimeTable" value="{{.TimeTable}}"> (минута, час, день, месяц, день недели) <br/>
+        <label>Максимальное количество снимков:</label> <input type="text" name="MaxSnap" value="{{.MaxSnap}}"> <br/>
+        <label>Сервисы требующие перезапуска:</label> <br/>
+        <textarea name="Services" rows="7" cols="120">{{.Services}}</textarea> <br/>
+        <label>Снимки:</label> <br/>
+        <input value="Сохранить" type="submit" name="Send">
+    </form>
+  </body>
+</html>
+{{end}}

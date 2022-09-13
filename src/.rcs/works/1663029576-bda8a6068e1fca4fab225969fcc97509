@@ -1,0 +1,10 @@
+{
+ "Id": "1663029576-bda8a6068e1fca4fab225969fcc97509",
+ "Title": "moodle",
+ "Path": "/pool/zfs/moodle",
+ "TimeTable": "* * * * *",
+ "MaxSnap": "11",
+ "Services": "",
+ "Status": "wait",
+ "Done": false
+}

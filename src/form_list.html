@@ -30,7 +30,7 @@
         {{if .Done}}
             <li class="{{.Status}}">{{.Title}} - {{.Status}} [{{.Id}}]</li>
         {{else}}
-            <li class="{{.Status}}"><a href="/view?id={{.Id}}" target="_blank">{{.Title}} - {{.Status}}</a> <a href="/remove?id={{.Id}}">&#x2716;</a></li>
+            <li class="{{.Status}}"><a href="/edit?id={{.Id}}" target="_blank">{{.Title}} - {{.Path}}</a> <a href="/remove?id={{.Id}}">&#x2716;</a></li>
         {{end}}
     {{end}}
 </ul>
