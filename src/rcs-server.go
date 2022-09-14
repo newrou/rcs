@@ -192,7 +192,7 @@ func main() {
             Path:       r.FormValue("Path"),
             TimeTable:  r.FormValue("TimeTable"),
             MaxSnap:    r.FormValue("MaxSnap"),
-            Services:   r.FormValue("Compounds"),
+            Services:   r.FormValue("Services"),
             Status:     r.FormValue("Status"),
         }
         dat, err := json.MarshalIndent(work, "", " ")
@@ -216,7 +216,7 @@ func main() {
 	    tmpl_edit := template.Must(template.ParseFiles("form_edit.html"))
 	    Id := r.FormValue("id")
 	    work := LoadWork(Id)
-//	    fmt.Println(work)
+	    fmt.Println(work)
             tmpl_edit.Execute(w, work)
             return
         }
@@ -227,15 +227,15 @@ func main() {
 	    Path:       r.FormValue("Path"),
 	    TimeTable:  r.FormValue("TimeTable"),
 	    MaxSnap:    r.FormValue("MaxSnap"),
-	    Services:   r.FormValue("Compounds"),
+	    Services:   r.FormValue("Services"),
 	    Status:     r.FormValue("Status"),
 	}
-	fmt.Println(work)
 	dat, err := json.MarshalIndent(work, "", " ")
 	if err != nil { fmt.Println(err) }
 	fname := fmt.Sprintf("%s/%s", works_dir, work.Id)
 	_ = ioutil.WriteFile(fname, dat, 0644)
-//	_ = work
+	_ = work
+	fmt.Println(work)
 	tmpl_edit_save.Execute(w, work)
 	log.Println("Редактирование ресурса: ", work.Id)
 //	fmt.Println(dat)

@@ -1,10 +1,10 @@
 {
  "Id": "1663029576-bda8a6068e1fca4fab225969fcc97509",
- "Title": "moodle",
+ "Title": "moodle2",
  "Path": "/pool/zfs/moodle",
  "TimeTable": "* * * * *",
  "MaxSnap": "11",
- "Services": "",
+ "Services": "apache2\r\nmysql\r\n",
  "Status": "wait",
  "Done": false
 }
