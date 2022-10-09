@@ -1,3 +1,0 @@
-* * * * * /usr/bin/rcs-make-crontab > /var/spool/cron/crontabs/root* * * * * run-backup-zfs.sh  1663029576-bda8a6068e1fca4fab225969fcc97509 > /dev/null 
-2 * * * * run-backup-zfs.sh  1665318837-6b8c74d1f623516f87935a88d15e268b > /dev/null 
-2 * * * * run-backup-zfs.sh  1665318856-c6bcf9321395b12dff0544fc2b7afe57 > /dev/null 

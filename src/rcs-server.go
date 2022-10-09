@@ -19,6 +19,7 @@ var conf_dir = "/var/lib/rcs/"
 var works_dir = conf_dir + "works"
 var archiv_dir = conf_dir + "archiv"
 var run_dir = conf_dir + "run"
+var www_dir = conf_dir + "www"
 
 type Work struct {
     Id           string
@@ -69,7 +70,7 @@ func GetWorkList(works []Work) []Work {
 
 func GetLog() string {
     Log := ""
-    file, err := os.Open(".rcs/rcs-server.log")
+    file, err := os.Open(conf_dir + "/rcs-server.log")
     if err != nil { log.Fatal(err) }
     defer file.Close()
     scanner := bufio.NewScanner(file)
@@ -90,7 +91,7 @@ func main() {
             PageTitle: "Список ресурсов:",
             WorkList: []Work{},
         }
-	tmpl_list := template.Must(template.ParseFiles("form_list.html"))
+	tmpl_list := template.Must(template.ParseFiles(www_dir + "form_list.html"))
 	data.WorkList = GetWorkList(data.WorkList)
         tmpl_list.Execute(w, data)
 //	log.Println("Просмотр списка ресурсов")
@@ -98,7 +99,7 @@ func main() {
 
 
     http.HandleFunc("/view", func(w http.ResponseWriter, r *http.Request) {
-	tmpl_view := template.Must(template.ParseFiles("form_view.html"))
+	tmpl_view := template.Must(template.ParseFiles(www_dir + "form_view.html"))
         if r.Method != http.MethodGet {
             tmpl_view.Execute(w, nil)
             return
@@ -123,7 +124,7 @@ func main() {
             PageTitle: "Журнал:",
             Message: "",
         }
-	tmpl_list := template.Must(template.ParseFiles("form_log.html"))
+	tmpl_list := template.Must(template.ParseFiles(www_dir + "form_log.html"))
 	data.Message = GetLog()
         tmpl_list.Execute(w, data)
 //	log.Println("Просмотр журнала")
@@ -131,7 +132,7 @@ func main() {
 
 
     http.HandleFunc("/set-status", func(w http.ResponseWriter, r *http.Request) {
-	tmpl_view := template.Must(template.ParseFiles("form_view.html"))
+	tmpl_view := template.Must(template.ParseFiles(www_dir + "form_view.html"))
         if r.Method != http.MethodGet {
             tmpl_view.Execute(w, nil)
             return
@@ -164,7 +165,7 @@ func main() {
 
 
     http.HandleFunc("/remove", func(w http.ResponseWriter, r *http.Request) {
-	tmpl_auto := template.Must(template.ParseFiles("form_auto.html"))
+	tmpl_auto := template.Must(template.ParseFiles(www_dir + "form_auto.html"))
         if r.Method != http.MethodGet {
             tmpl_auto.Execute(w, nil)
             return
@@ -182,7 +183,7 @@ func main() {
 
 
     http.HandleFunc("/add", func(w http.ResponseWriter, r *http.Request) {
-	tmpl_add := template.Must(template.ParseFiles("form_add.html"))
+	tmpl_add := template.Must(template.ParseFiles(www_dir + "form_add.html"))
         if r.Method != http.MethodPost {
             tmpl_add.Execute(w, nil)
             return
@@ -213,14 +214,14 @@ func main() {
 
     http.HandleFunc("/edit", func(w http.ResponseWriter, r *http.Request) {
         if r.Method != http.MethodPost {
-	    tmpl_edit := template.Must(template.ParseFiles("form_edit.html"))
+	    tmpl_edit := template.Must(template.ParseFiles(www_dir + "form_edit.html"))
 	    Id := r.FormValue("id")
 	    work := LoadWork(Id)
 	    fmt.Println(work)
             tmpl_edit.Execute(w, work)
             return
         }
-	tmpl_edit_save := template.Must(template.ParseFiles("form_edit_save.html"))
+	tmpl_edit_save := template.Must(template.ParseFiles(www_dir + "form_edit_save.html"))
 	work := Work{
 	    Id :        r.FormValue("id"),
 	    Title:      r.FormValue("Title"),
