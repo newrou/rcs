@@ -1,6 +1,6 @@
 <html>
 <head>
-    <!-- <meta http-equiv="refresh" content="5"> -->
+    <meta http-equiv="refresh" content="3">
 <style>
 .wait {
   color: gray;
@@ -22,15 +22,17 @@
 </style>
 </head>
 <body>
-<h1>{{.PageTitle}}</h1>
-<p><a href="/add" target="_blank">Добавить новый ресурс</a></p>
-<p><a href="/log" target="_blank">Просмотр журнала</a></p>
+<h1>RCS</h1>
+<p><a href="/add" target="content">Добавить новый ресурс</a></p>
+<p><a href="/log" target="content">Просмотр журнала</a></p>
+<p><a href="/snapshot" target="content">Снимки файловой системы</a></p>
+<p>Список ресурсов:</p>
 <ul>
     {{range .WorkList}}
         {{if .Done}}
             <li class="{{.Status}}">{{.Title}} - {{.Status}} [{{.Id}}]</li>
         {{else}}
-            <li class="{{.Status}}"><a href="/edit?id={{.Id}}" target="_blank">{{.Title}} - {{.Path}}</a> <a href="/remove?id={{.Id}}">&#x2716;</a></li>
+            <li class="{{.Status}}"><a href="/edit?id={{.Id}}" target="content">{{.Title}} - {{.Path}}</a> <a href="/remove?id={{.Id}}" target="content">&#x2716;</a></li>
         {{end}}
     {{end}}
 </ul>

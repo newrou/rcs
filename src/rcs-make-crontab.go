@@ -55,7 +55,7 @@ func GetWorkList(works []Work) []Work {
     for _, file := range files {
 	w := LoadWork(file.Name())
 	works = append(works, w)
-	fmt.Printf("%s run-backup-zfs.sh  %s > /dev/null\n", w.TimeTable, w.Id)
+	fmt.Printf("# %s run-backup-zfs.sh  %s > /dev/null\n", w.TimeTable, w.Id)
     }
     return works
 }

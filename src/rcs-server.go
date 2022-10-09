@@ -88,6 +88,17 @@ func main() {
 
     http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
         data := PageData{
+            PageTitle: "Сервер RCS:",
+            WorkList: []Work{},
+        }
+	tmpl_list := template.Must(template.ParseFiles(www_dir + "form_main.html"))
+	data.WorkList = GetWorkList(data.WorkList)
+        tmpl_list.Execute(w, data)
+//	log.Println("Просмотр списка ресурсов")
+    })
+
+    http.HandleFunc("/list", func(w http.ResponseWriter, r *http.Request) {
+        data := PageData{
             PageTitle: "Список ресурсов:",
             WorkList: []Work{},
         }

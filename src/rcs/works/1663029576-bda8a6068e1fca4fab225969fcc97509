@@ -3,7 +3,7 @@
  "Title": "moodle2",
  "Path": "/pool/zfs/moodle",
  "TimeTable": "* * * * *",
- "MaxSnap": "11",
+ "MaxSnap": "7",
  "Services": "apache2\r\nmysql\r\n",
  "Status": "wait",
  "Done": false
