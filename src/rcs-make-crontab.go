@@ -13,7 +13,7 @@ import (
 //    "reflect"
 )
 
-var conf_dir = ".rcs/"
+var conf_dir = "/var/lib/rcs/"
 var works_dir = conf_dir + "works"
 var archiv_dir = conf_dir + "archiv"
 var run_dir = conf_dir + "run"
@@ -55,7 +55,7 @@ func GetWorkList(works []Work) []Work {
     for _, file := range files {
 	w := LoadWork(file.Name())
 	works = append(works, w)
-	fmt.Printf("%s run-backup-zfs.sh  %s > /dev/null \n", w.TimeTable, w.Id)
+	fmt.Printf("%s run-backup-zfs.sh  %s > /dev/null\n", w.TimeTable, w.Id)
     }
     return works
 }
@@ -65,6 +65,7 @@ func main() {
     file, err := os.OpenFile(conf_dir + "rcs-server.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
     // if err != nil { log.Fatal(err) }
     if err == nil { log.SetOutput(file) }
+    fmt.Printf("* * * * * /usr/bin/rcs-make-crontab > /var/spool/cron/crontabs/root\n")
     _ = GetWorkList(WorkList)
     log.Println("Обновление crontab")
 }

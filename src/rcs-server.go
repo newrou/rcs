@@ -15,7 +15,7 @@ import (
 //    "reflect"
 )
 
-var conf_dir = ".rcs/"
+var conf_dir = "/var/lib/rcs/"
 var works_dir = conf_dir + "works"
 var archiv_dir = conf_dir + "archiv"
 var run_dir = conf_dir + "run"
