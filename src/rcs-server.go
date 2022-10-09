@@ -241,6 +241,9 @@ func main() {
 //	fmt.Println(dat)
     })
 
+    fileServer := http.FileServer(http.Dir("snapshot"))
+    http.Handle("/snapshot/", http.StripPrefix("/snapshot/", fileServer))
+
 
     http.ListenAndServe(":8080", nil)
 }
