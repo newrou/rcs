@@ -16,10 +16,10 @@ import (
 )
 
 var conf_dir = "/var/lib/rcs/"
-var works_dir = conf_dir + "works"
-var archiv_dir = conf_dir + "archiv"
-var run_dir = conf_dir + "run"
-var www_dir = conf_dir + "www"
+var works_dir = conf_dir + "works/"
+var archiv_dir = conf_dir + "archiv/"
+var run_dir = conf_dir + "run/"
+var www_dir = conf_dir + "www/"
 
 type Work struct {
     Id           string
@@ -40,7 +40,7 @@ type PageData struct {
 
 func LoadWork(id string) Work {
     var w Work
-    fname := fmt.Sprintf("%s/%s", works_dir, id)
+    fname := fmt.Sprintf("%s%s", works_dir, id)
     content, err := ioutil.ReadFile(fname)
     if err != nil { /*log.Fatal("Error when opening file: ", err)*/ return w }
     var data map[string]interface{}
@@ -70,7 +70,7 @@ func GetWorkList(works []Work) []Work {
 
 func GetLog() string {
     Log := ""
-    file, err := os.Open(conf_dir + "/rcs-server.log")
+    file, err := os.Open(conf_dir + "rcs-server.log")
     if err != nil { log.Fatal(err) }
     defer file.Close()
     scanner := bufio.NewScanner(file)
@@ -143,7 +143,7 @@ func main() {
 	work.Status = Status
         dat, err := json.MarshalIndent(work, "", " ")
         if err != nil { fmt.Println(err) }
-	fname := fmt.Sprintf("%s/%s", works_dir, Id)
+	fname := fmt.Sprintf("%s%s", works_dir, Id)
         _ = ioutil.WriteFile(fname, dat, 0644)
         tmpl_view.Execute(w, work)
 	log.Println("Set status work", Id, "to", Status)
@@ -156,7 +156,7 @@ func main() {
         }
 	Id := r.FormValue("id")
 	wFile := r.FormValue("file")
-	fname := fmt.Sprintf("%s/%s/%s", run_dir, Id, wFile)
+	fname := fmt.Sprintf("%s%s/%s", run_dir, Id, wFile)
 	content, _ := ioutil.ReadFile(fname)
 	fmt.Printf("file %s content:\n %s", fname, content)
 	fmt.Fprintf(w, "%s", content)
@@ -171,8 +171,8 @@ func main() {
             return
         }
 	Id := r.FormValue("id")
-	p1 := fmt.Sprintf("%s/%s", works_dir, Id)
-	p2 := fmt.Sprintf("%s/%s", archiv_dir, Id)
+	p1 := fmt.Sprintf("%s%s", works_dir, Id)
+	p2 := fmt.Sprintf("%s%s", archiv_dir, Id)
 	e := os.Rename(p1, p2)
 	if e != nil { /* log.Fatal(e) */ }
 	msg := fmt.Sprintf("Удаление ресурса: %s", Id)
@@ -203,7 +203,7 @@ func main() {
 	work.Id = fmt.Sprintf("%d-%x", utime, hmd5)
         dat, err = json.MarshalIndent(work, "", " ")
         if err != nil { fmt.Println(err) }
-	fname := fmt.Sprintf("%s/%s", works_dir, work.Id)
+	fname := fmt.Sprintf("%s%s", works_dir, work.Id)
         _ = ioutil.WriteFile(fname, dat, 0644)
 //        fmt.Println(fname, string(dat))
         _ = work
@@ -233,7 +233,7 @@ func main() {
 	}
 	dat, err := json.MarshalIndent(work, "", " ")
 	if err != nil { fmt.Println(err) }
-	fname := fmt.Sprintf("%s/%s", works_dir, work.Id)
+	fname := fmt.Sprintf("%s%s", works_dir, work.Id)
 	_ = ioutil.WriteFile(fname, dat, 0644)
 	_ = work
 	fmt.Println(work)
