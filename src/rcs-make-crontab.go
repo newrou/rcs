@@ -3,7 +3,7 @@ package main
 import (
     "fmt"
     "encoding/json"
-//    "time"
+    "time"
     "io/ioutil"
 //    "crypto/md5"
     "log"
@@ -27,6 +27,12 @@ type Work struct {
     Services     string
     Status       string
     Done         bool
+}
+
+func GetTime() string {
+// utime := int32(time.Now().Unix())
+   current_time := time.Now()
+   return fmt.Sprintln(current_time.Format(time.UnixDate))
 }
 
 func LoadWork(id string) Work {
@@ -55,7 +61,8 @@ func GetWorkList(works []Work) []Work {
     for _, file := range files {
 	w := LoadWork(file.Name())
 	works = append(works, w)
-	fmt.Printf("# %s run-backup-zfs.sh  %s > /dev/null\n", w.TimeTable, w.Id)
+//	fmt.Printf("# %s run-backup-zfs.sh  %s > /dev/null\n", w.TimeTable, w.Id)
+	fmt.Printf("%s /var/lib/rcs/make-snap-win.sh %s %s > /dev/null\n", w.TimeTable, w.Id, w.MaxSnap)
     }
     return works
 }
@@ -65,7 +72,10 @@ func main() {
     file, err := os.OpenFile(conf_dir + "rcs-server.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
     // if err != nil { log.Fatal(err) }
     if err == nil { log.SetOutput(file) }
-    fmt.Printf("* * * * * /usr/bin/rcs-make-crontab > /var/spool/cron/crontabs/root\n")
+    fmt.Printf("# Create at %s\n", GetTime())
+    fmt.Printf("* * * * * /etc/init.d/cron reload > /dev/null\n")
+    fmt.Printf("* * * * * /var/lib/rcs/rcs-make-crontab > /var/spool/cron/crontabs/root\n")
     _ = GetWorkList(WorkList)
     log.Println("Обновление crontab")
 }
+

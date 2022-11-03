@@ -118,7 +118,7 @@ func GetLog() string {
 func GetTime() string {
 //   utime := int32(time.Now().Unix())
    current_time := time.Now()
-   return fmt.Sprintln(current_time.Format("2007-01-02 15:04:05"))
+   return fmt.Sprintln(current_time.Format(time.UnixDate))
 }
 
 
@@ -372,7 +372,7 @@ func main() {
     })
 
 
-    fileServer := http.FileServer(http.Dir("snapshot"))
+    fileServer := http.FileServer(http.Dir("rcs/snapshot"))
     http.Handle("/snapshot/", http.StripPrefix("/snapshot/", fileServer))
 
 

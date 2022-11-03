@@ -1,9 +1,9 @@
 {
  "Id": "1665337792-c432aa7a86e1861819cf693126ba9a42",
  "Title": "win share",
- "Path": "\\\\win\\share",
- "TimeTable": "*/2 * * * *",
- "MaxSnap": "17",
+ "Path": "//192.168.0.10/Share",
+ "TimeTable": "*/3 * * * *",
+ "MaxSnap": "177",
  "Services": "",
  "Status": "wait",
  "Done": false

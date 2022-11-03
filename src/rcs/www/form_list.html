@@ -28,7 +28,7 @@
         {{if .Done}}
             <li class="{{.Status}}">{{.Title}} - {{.Status}} [{{.Id}}]</li>
         {{else}}
-            <li class="{{.Status}}"><a href="/edit?id={{.Id}}" target="content">{{.Title}} - {{.Path}}</a> <a href="/remove?id={{.Id}}" target="content">&#x2716;</a></li>
+            <li class="{{.Status}}"><a href="/edit?id={{.Id}}" target="content">{{.Title}} - {{.Path}}</a> <a href="/snapshot/{{.Id}}" target="content">&#128247;</a> <a href="/remove?id={{.Id}}" target="content">&#x2716;</a></li>
         {{end}}
     {{end}}
 </ul>

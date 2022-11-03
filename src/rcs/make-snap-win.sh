@@ -1,0 +1,1 @@
+/root/Develop/rcs/scripts/make-snap-win.sh
