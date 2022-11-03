@@ -11,7 +11,7 @@ import (
     "log"
     "os"
     "bufio"
-    "syscall"
+//    "syscall"
 //    "strconv"
 //    "reflect"
 )
@@ -115,12 +115,19 @@ func GetLog() string {
 }
 
 
+func GetTime() string {
+//   utime := int32(time.Now().Unix())
+   current_time := time.Now()
+   return fmt.Sprintln(current_time.Format("2007-01-02 15:04:05"))
+}
+
+
 func GetState() string {
 //    sysinfo := syscall.Sysinfo_t{}
 //    err := syscall.Sysinfo(&sysinfo)
 //    if err != nil { fmt.Println("Error:", err) } 
 //    Log := fmt.Sprintln("Ok!\nsysinfo: ", sysinfo)
-    Log := fmt.Sprintln("Ok!\n")    
+    Log := fmt.Sprintln("Ok!\n\n", GetTime())    
     return Log
 }
 
