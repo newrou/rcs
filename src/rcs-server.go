@@ -11,7 +11,7 @@ import (
     "log"
     "os"
     "bufio"
-//    "syscall"
+    "syscall"
 //    "strconv"
 //    "reflect"
 )
@@ -123,12 +123,28 @@ func GetTime() string {
 
 
 func GetState() string {
-//    sysinfo := syscall.Sysinfo_t{}
-//    err := syscall.Sysinfo(&sysinfo)
-//    if err != nil { fmt.Println("Error:", err) } 
-//    Log := fmt.Sprintln("Ok!\nsysinfo: ", sysinfo)
-    Log := fmt.Sprintln("Ok!\n\n", GetTime())    
-    return Log
+    sysinfo := syscall.Sysinfo_t{}
+    err := syscall.Sysinfo(&sysinfo)
+    if err != nil { fmt.Println("Error:", err) } 
+    Stat := fmt.Sprintln("Ok!\n", GetTime())
+    Stat += fmt.Sprintln("Uptime:", sysinfo.Uptime)
+    Stat += fmt.Sprintln("Loads:", sysinfo.Loads)
+    Stat += fmt.Sprintln("Totalram:", sysinfo.Totalram)
+    Stat += fmt.Sprintln("Freeram:", sysinfo.Freeram)
+    Stat += fmt.Sprintln("Sharedram:", sysinfo.Sharedram)
+    Stat += fmt.Sprintln("Bufferram:", sysinfo.Bufferram)
+    Stat += fmt.Sprintln("Totalswap:", sysinfo.Totalswap)
+    Stat += fmt.Sprintln("Freeswap:", sysinfo.Freeswap)
+    Stat += fmt.Sprintln("Procs:", sysinfo.Procs)
+    Stat += fmt.Sprintln("Pad:", sysinfo.Pad)
+    Stat += fmt.Sprintln("Pad_cgo_0:", sysinfo.Pad_cgo_0)
+    Stat += fmt.Sprintln("Totalhigh:", sysinfo.Totalhigh)
+    Stat += fmt.Sprintln("Freehigh:", sysinfo.Freehigh)
+    Stat += fmt.Sprintln("Unit:", sysinfo.Unit)
+    Stat += fmt.Sprintln("X_f:", sysinfo.X_f)
+    Stat += fmt.Sprintln("Pad_cgo_1:", sysinfo.Pad_cgo_1)
+//    Log := fmt.Sprintln("Ok!\n\n", GetTime())    
+    return Stat
 }
 
 
