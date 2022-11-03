@@ -11,6 +11,7 @@ import (
     "log"
     "os"
     "bufio"
+    "syscall"
 //    "strconv"
 //    "reflect"
 )
@@ -115,7 +116,11 @@ func GetLog() string {
 
 
 func GetState() string {
-    Log := "Ok!"
+//    sysinfo := syscall.Sysinfo_t{}
+//    err := syscall.Sysinfo(&sysinfo)
+//    if err != nil { fmt.Println("Error:", err) } 
+//    Log := fmt.Sprintln("Ok!\nsysinfo: ", sysinfo)
+    Log := fmt.Sprintln("Ok!\n")    
     return Log
 }
 
