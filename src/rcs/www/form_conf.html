@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <title>Настройка</title>
+  </head>
+  <body>
+    <h3>Настройка:</h3>
+    <form method="POST" action="/conf">
+        <label>Организация:</label> <input type="text" name="Title" value="{{.Title}}"> <br/>
+        <label>Пул:</label> <input type="text" name="Pool" value="{{.Pool}}"> <br/>
+        <input value="Сохранить" type="submit" name="Send">
+    </form>
+  </body>
+</html>

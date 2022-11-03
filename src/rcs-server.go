@@ -15,28 +15,58 @@ import (
 //    "reflect"
 )
 
-var conf_dir = "/var/lib/rcs/"
+
+var conf_dir = "rcs/"
+//var conf_dir = "/var/lib/rcs/"
 var works_dir = conf_dir + "works/"
 var archiv_dir = conf_dir + "archiv/"
 var run_dir = conf_dir + "run/"
 var www_dir = conf_dir + "www/"
 
-type Work struct {
-    Id           string
-    Title        string
-    Path         string
-    TimeTable    string
-    MaxSnap      string
-    Services     string
-    Status       string
-    Done         bool
+
+type Conf struct {
+    Title    	string
+    Pool      	string
 }
 
-type PageData struct {
-    PageTitle    string
-    Message      string
-    WorkList     []Work
+
+type Work struct {
+    Id          string
+    Title       string
+    Path        string
+    TimeTable   string
+    MaxSnap     string
+    Services    string
+    Status      string
+    Done        bool
 }
+
+
+type PageData struct {
+    PageTitle   string
+    Message     string
+    WorkList    []Work
+}
+
+
+func LoadConf() Conf {
+    var w Conf
+    fname := fmt.Sprintf("%s%s", conf_dir, "rcs.conf")
+    content, err := ioutil.ReadFile(fname)
+    if err != nil { 
+    	w.Title = fmt.Sprintf("%s", "")
+    	w.Pool = fmt.Sprintf("%s", "")
+	/*log.Fatal("Error when opening file: ", err)*/ 
+	return w 
+    }
+    var data map[string]interface{}
+    err = json.Unmarshal(content, &data)
+    if err != nil { /*log.Fatal("Error during Unmarshal(): ", err)*/ return w }
+    w.Title = fmt.Sprintf("%s", data["Title"])
+    w.Pool = fmt.Sprintf("%s", data["Pool"])
+    return w
+}
+
 
 func LoadWork(id string) Work {
     var w Work
@@ -58,6 +88,7 @@ func LoadWork(id string) Work {
     return w
 }
 
+
 func GetWorkList(works []Work) []Work {
     files, err := ioutil.ReadDir(works_dir)
     if err != nil { /*log.Fatal(err)*/ return works }
@@ -67,6 +98,7 @@ func GetWorkList(works []Work) []Work {
     }
     return works
 }
+
 
 func GetLog() string {
     Log := ""
@@ -81,10 +113,18 @@ func GetLog() string {
     return Log
 }
 
+
+func GetState() string {
+    Log := "Ok!"
+    return Log
+}
+
+
 func main() {
     file, err := os.OpenFile(conf_dir + "rcs-server.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
     // if err != nil { log.Fatal(err) }
     if err == nil { log.SetOutput(file) }
+
 
     http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
         data := PageData{
@@ -97,9 +137,22 @@ func main() {
 //	log.Println("Просмотр списка ресурсов")
     })
 
+
+    http.HandleFunc("/menu", func(w http.ResponseWriter, r *http.Request) {
+        data := PageData{
+            PageTitle: "Сервер RCS: меню",
+            WorkList: []Work{},
+        }
+	tmpl_list := template.Must(template.ParseFiles(www_dir + "form_menu.html"))
+	data.WorkList = GetWorkList(data.WorkList)
+        tmpl_list.Execute(w, data)
+//	log.Println("Просмотр списка ресурсов")
+    })
+
+
     http.HandleFunc("/list", func(w http.ResponseWriter, r *http.Request) {
         data := PageData{
-            PageTitle: "Список ресурсов:",
+            PageTitle: "Сервер RCS: список ресурсов:",
             WorkList: []Work{},
         }
 	tmpl_list := template.Must(template.ParseFiles(www_dir + "form_list.html"))
@@ -130,6 +183,18 @@ func main() {
     })
 
 
+    http.HandleFunc("/state", func(w http.ResponseWriter, r *http.Request) {
+        data := PageData{
+            PageTitle: "Состояние системы:",
+            Message: "",
+        }
+	tmpl_list := template.Must(template.ParseFiles(www_dir + "form_state.html"))
+	data.Message = GetState()
+        tmpl_list.Execute(w, data)
+//	log.Println("Просмотр журнала")
+    })
+
+ 
     http.HandleFunc("/log", func(w http.ResponseWriter, r *http.Request) {
         data := PageData{
             PageTitle: "Журнал:",
@@ -252,6 +317,32 @@ func main() {
 	log.Println("Редактирование ресурса: ", work.Id)
 //	fmt.Println(dat)
     })
+
+
+    http.HandleFunc("/conf", func(w http.ResponseWriter, r *http.Request) {
+        if r.Method != http.MethodPost {
+	    tmpl_edit := template.Must(template.ParseFiles(www_dir + "form_conf.html"))
+	    conf := LoadConf()
+	    fmt.Println(conf)
+            tmpl_edit.Execute(w, conf)
+            return
+        }
+	tmpl_edit_save := template.Must(template.ParseFiles(www_dir + "form_conf_save.html"))
+	conf := Conf{
+	    Title:      r.FormValue("Title"),
+	    Pool:       r.FormValue("Pool"),
+	}
+	dat, err := json.MarshalIndent(conf, "", " ")
+	if err != nil { fmt.Println(err) }
+	fname := fmt.Sprintf("%s%s", conf_dir, "rcs.conf")
+	_ = ioutil.WriteFile(fname, dat, 0644)
+	_ = conf
+	fmt.Println(conf)
+	tmpl_edit_save.Execute(w, conf)
+	log.Println("Настройка")
+//	fmt.Println(dat)
+    })
+
 
     fileServer := http.FileServer(http.Dir("snapshot"))
     http.Handle("/snapshot/", http.StripPrefix("/snapshot/", fileServer))
