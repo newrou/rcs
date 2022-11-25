@@ -1,0 +1,1 @@
+experimental dashboard without <iframe> and <frameset> on JS scripts, HTML and CSS
