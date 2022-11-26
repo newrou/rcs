@@ -18,10 +18,17 @@ var works_dir = conf_dir + "works"
 var archiv_dir = conf_dir + "archiv"
 var run_dir = conf_dir + "run"
 
+type Conf struct {
+    Title    	string
+    Pool      	string
+}
+
 type Work struct {
     Id           string
     Title        string
     Path         string
+    Login        string
+    Password     string
     TimeTable    string
     MaxSnap      string
     Services     string
@@ -33,6 +40,24 @@ func GetTime() string {
 // utime := int32(time.Now().Unix())
    current_time := time.Now()
    return fmt.Sprintln(current_time.Format(time.UnixDate))
+}
+
+func LoadConf() Conf {
+    var w Conf
+    fname := fmt.Sprintf("%s%s", conf_dir, "rcs.conf")
+    content, err := ioutil.ReadFile(fname)
+    if err != nil { 
+    	w.Title = fmt.Sprintf("%s", "")
+    	w.Pool = fmt.Sprintf("%s", "")
+	/*log.Fatal("Error when opening file: ", err)*/ 
+	return w 
+    }
+    var data map[string]interface{}
+    err = json.Unmarshal(content, &data)
+    if err != nil { /*log.Fatal("Error during Unmarshal(): ", err)*/ return w }
+    w.Title = fmt.Sprintf("%s", data["Title"])
+    w.Pool = fmt.Sprintf("%s", data["Pool"])
+    return w
 }
 
 func LoadWork(id string) Work {
@@ -47,6 +72,8 @@ func LoadWork(id string) Work {
     w.Id = id
     w.Title = fmt.Sprintf("%s", data["Title"])
     w.Path = fmt.Sprintf("%s", data["Path"])
+    w.Login = fmt.Sprintf("%s", data["Login"])
+    w.Password = fmt.Sprintf("%s", data["Password"])
     w.TimeTable = fmt.Sprintf("%s", data["TimeTable"])
     w.MaxSnap = fmt.Sprintf("%s", data["MaxSnap"])
     w.Services = fmt.Sprintf("%s", data["Services"])
@@ -56,13 +83,14 @@ func LoadWork(id string) Work {
 }
 
 func GetWorkList(works []Work) []Work {
+    conf := LoadConf()
     files, err := ioutil.ReadDir(works_dir)
     if err != nil { /*log.Fatal(err)*/ return works }
     for _, file := range files {
 	w := LoadWork(file.Name())
 	works = append(works, w)
 //	fmt.Printf("# %s run-backup-zfs.sh  %s > /dev/null\n", w.TimeTable, w.Id)
-	fmt.Printf("%s /var/lib/rcs/make-snap-win.sh %s %s > /dev/null\n", w.TimeTable, w.Id, w.MaxSnap)
+	fmt.Printf("%s /var/lib/rcs/make-snap-win.sh %s %s %s %s %s > /dev/null\n", w.TimeTable, conf.Pool, w.Id, w.MaxSnap, w.Login, w.Password)
     }
     return works
 }

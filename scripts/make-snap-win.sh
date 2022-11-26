@@ -1,13 +1,15 @@
 #!/bin/bash
 
-fs=$1
-nsnap=$2
-pool='Snuff'
+pool=$1
+fs=$2
+nsnap=$3
+user=$4
+pswd=$5
 
 # mount win
 umount /mnt/$fs
 mkdir -p /mnt/$fs
-mount -t cifs -o username=Fallen,password=123 //192.168.0.10/Share /mnt/$fs
+mount -t cifs -o username=$user,password=$pswd //192.168.0.10/Share /mnt/$fs
 
 # rsync res
 opt="-alrvP -X -A -M --fake-super --stats --bwlimit=70M"

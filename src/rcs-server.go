@@ -35,6 +35,8 @@ type Work struct {
     Id          string
     Title       string
     Path        string
+    Login       string
+    Password    string
     TimeTable   string
     MaxSnap     string
     Services    string
@@ -81,6 +83,8 @@ func LoadWork(id string) Work {
     w.Id = id
     w.Title = fmt.Sprintf("%s", data["Title"])
     w.Path = fmt.Sprintf("%s", data["Path"])
+    w.Login = fmt.Sprintf("%s", data["Login"])
+    w.Password = fmt.Sprintf("%s", data["Password"])
     w.TimeTable = fmt.Sprintf("%s", data["TimeTable"])
     w.MaxSnap = fmt.Sprintf("%s", data["MaxSnap"])
     w.Services = fmt.Sprintf("%s", data["Services"])
@@ -295,6 +299,8 @@ func main() {
         work := Work{
             Title:      r.FormValue("Title"),
             Path:       r.FormValue("Path"),
+	    Login:      r.FormValue("Login"),
+	    Password:   r.FormValue("Password"),
             TimeTable:  r.FormValue("TimeTable"),
             MaxSnap:    r.FormValue("MaxSnap"),
             Services:   r.FormValue("Services"),
@@ -330,6 +336,8 @@ func main() {
 	    Id :        r.FormValue("id"),
 	    Title:      r.FormValue("Title"),
 	    Path:       r.FormValue("Path"),
+	    Login:      r.FormValue("Login"),
+	    Password:   r.FormValue("Password"),
 	    TimeTable:  r.FormValue("TimeTable"),
 	    MaxSnap:    r.FormValue("MaxSnap"),
 	    Services:   r.FormValue("Services"),
