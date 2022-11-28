@@ -1,0 +1,12 @@
+{
+ "Id": "1669544616-e6f8be993e14355bcbc6cd9d7605fca4",
+ "Title": "MCR-Share",
+ "Path": "//10.36.4.92/Share",
+ "Login": "max",
+ "Password": "Cvbhyjd001!",
+ "TimeTable": "1 1 * * *",
+ "MaxSnap": "365",
+ "Services": "",
+ "Status": "wait",
+ "Done": false
+}

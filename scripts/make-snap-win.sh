@@ -2,19 +2,20 @@
 
 pool=$1
 fs=$2
-nsnap=$3
-user=$4
-pswd=$5
+share=$3
+nsnap=$4
+user=$5
+pswd=$6
 
 # mount win
 umount /mnt/$fs
 mkdir -p /mnt/$fs
-mount -t cifs -o username=$user,password=$pswd //192.168.0.10/Share /mnt/$fs
+mount -t cifs -o username=$user,password=$pswd $share /mnt/$fs
 
 # rsync res
 opt="-alrvP -X -A -M --fake-super --stats --bwlimit=70M"
 /usr/bin/rsync $opt /mnt/$fs/* /$pool/$fs
-umount /mnt/win
+umount /mnt/$fs
 
 # make new snap
 d=`date +%d.%m.%Y-%H.%M.%S`

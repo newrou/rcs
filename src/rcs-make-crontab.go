@@ -90,7 +90,7 @@ func GetWorkList(works []Work) []Work {
 	w := LoadWork(file.Name())
 	works = append(works, w)
 //	fmt.Printf("# %s run-backup-zfs.sh  %s > /dev/null\n", w.TimeTable, w.Id)
-	fmt.Printf("%s /var/lib/rcs/make-snap-win.sh %s %s %s %s %s > /dev/null\n", w.TimeTable, conf.Pool, w.Id, w.MaxSnap, w.Login, w.Password)
+	fmt.Printf("%s /var/lib/rcs/make-snap-win.sh %s %s %s %s %s %s > /dev/null\n", w.TimeTable, conf.Pool, w.Id, w.Path, w.MaxSnap, w.Login, w.Password)
     }
     return works
 }
