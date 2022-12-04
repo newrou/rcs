@@ -82,10 +82,10 @@
           <div class="overview-boxes">
 
               <div class="box">
-                  <div class="right-side">
+                  <div class="right-side" id="test">
                      <div class="title">Состояние пула</div>
                      <div class="box-topic">cвободное место</div>
-                     <div class="number" id="test">15 Гб</div>
+                     <div class="number">15 Гб</div>
                   </div>
               </div>
 
@@ -125,18 +125,13 @@
       rq.open('GET', url, 1);
       rq.responseType = 'text';
       rq.onload = function() {
-          alert(this.responseText);
           document.getElementById("test").innerHTML = this.responseText;
       };
       rq.send();
       // alert(rq.response);
    }
 
-   document.getElementById("test").innerHTML = 'XZ';
-   update_test('file:///Archiv/Archiv/ScienceWork/Science-Software-dev/rcs/src/rcs/www-new/123');
-   // document.getElementById("test").innerHTML = get_url('http://lib.ru');
-   // document.getElementById("test").innerHTML = get_url('file:///Archiv/Archiv/ScienceWork/Science-Software-dev/rcs/src/rcs/www-new/123');
-   // document.getElementById("test").innerHTML = getPageHtml('123');
+   update_test('state');
    let sidebar = document.querySelector(".sidebar");
    let sidebarBtn = document.querySelector(".sidebarBtn");
    sidebarBtn.onclick = function() {

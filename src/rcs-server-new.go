@@ -22,8 +22,7 @@ var conf_dir = "rcs/"
 var works_dir = conf_dir + "works/"
 var archiv_dir = conf_dir + "archiv/"
 var run_dir = conf_dir + "run/"
-var www_dir = conf_dir + "www/"
-
+var www_dir = conf_dir + "www-new/"
 
 type Conf struct {
     Title    	string
@@ -379,31 +378,6 @@ func main() {
 //	fmt.Println(dat)
     })
 
-
-    http.HandleFunc("/1.html", func(w http.ResponseWriter, r *http.Request) {
-        data := PageData{
-            PageTitle: "",
-            Message: "",
-        }
-	tmpl_list := template.Must(template.ParseFiles(www_dir + "1.html"))
-	data.Message = GetState()
-        tmpl_list.Execute(w, data)
-	fmt.Println("1.html")
-    })
-
-    http.HandleFunc("/style.css", func(w http.ResponseWriter, r *http.Request) {
-        data := PageData{
-            PageTitle: "",
-            Message: "",
-        }
-	tmpl_list := template.Must(template.ParseFiles(www_dir + "style.css"))
-	data.Message = GetState()
-        w.Header().Set("Content-Type", "text/css")
-        tmpl_list.Execute(w, data)
-	fmt.Println("style.css")
-    })
-
- 
 
     fileServer := http.FileServer(http.Dir("rcs/snapshot"))
     http.Handle("/snapshot/", http.StripPrefix("/snapshot/", fileServer))

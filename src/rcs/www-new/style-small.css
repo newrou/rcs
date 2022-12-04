@@ -1,4 +1,3 @@
-/* Googlefont Poppins CDN Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
   margin: 0;
@@ -83,8 +82,7 @@
 .sidebar.active ~ .home-section{
   width: calc(100% - 60px);
   left: 60px;
-}
-.home-section nav{
+}.home-section nav{
   display: flex;
   justify-content: space-between;
   height: 80px;
@@ -98,12 +96,10 @@
   padding: 0 20px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   transition: all 0.5s ease;
-}
-.sidebar.active ~ .home-section nav{
+}.sidebar.active ~ .home-section nav{
   left: 60px;
   width: calc(100% - 60px);
-}
-.home-section nav .sidebar-button{
+}.home-section nav .sidebar-button{
   display: flex;
   align-items: center;
   font-size: 24px;
@@ -172,6 +168,8 @@ nav .profile-details i{
   font-size: 25px;
   color: #333;
 }
+
+/** **/
 .home-section .home-content{
   position: relative;
   padding-top: 104px;
@@ -437,4 +435,5 @@ nav .profile-details .admin_name,
     width: calc(100% - 60px);
   }
 }
+
 

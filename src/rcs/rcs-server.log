@@ -6,3 +6,811 @@
 2022/11/27 01:57:23 Настройка
 2022/11/27 01:57:49 Обновление crontab
 2022/11/27 01:57:54 Обновление crontab
+2022/11/30 21:45:17 Удаление ресурса:  1669544616-e6f8be993e14355bcbc6cd9d7605fca4
+2022/11/30 21:47:29 Обновление crontab
+2022/11/30 21:47:35 Обновление crontab
+2022/11/30 21:48:31 Обновление crontab
+2022/11/30 21:50:28 Настройка
+2022/11/30 21:54:07 Обновление crontab
+2022/11/30 21:58:27 http: panic serving 127.0.0.1:46950: open rcs/www-new/form_main.html: no such file or directory
+goroutine 19 [running]:
+net/http.(*conn).serve.func1(0xc000090dc0)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc000077320)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc00010e000, 0xc0000b0400)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc00010e000, 0xc0000b0400)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc00010e000, 0xc0000b0400)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc00010e000, 0xc0000b0400)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc000090dc0, 0x817780, 0xc000084200)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:27 http: panic serving 127.0.0.1:46952: open rcs/www-new/form_main.html: no such file or directory
+goroutine 21 [running]:
+net/http.(*conn).serve.func1(0xc000090e60)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc0000774a0)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc00010e0e0, 0xc0000b0600)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc00010e0e0, 0xc0000b0600)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc00010e0e0, 0xc0000b0600)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc00010e0e0, 0xc0000b0600)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc000090e60, 0x817780, 0xc000084440)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:27 http: panic serving 127.0.0.1:46954: open rcs/www-new/form_main.html: no such file or directory
+goroutine 4 [running]:
+net/http.(*conn).serve.func1(0xc000142000)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc0001401b0)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc000150000, 0xc000146000)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc000150000, 0xc000146000)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc000150000, 0xc000146000)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc000150000, 0xc000146000)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc000142000, 0x817780, 0xc000056080)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:27 http: panic serving 127.0.0.1:46956: open rcs/www-new/form_main.html: no such file or directory
+goroutine 23 [running]:
+net/http.(*conn).serve.func1(0xc000090f00)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc000077620)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc00010e1c0, 0xc0000b0700)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc00010e1c0, 0xc0000b0700)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc00010e1c0, 0xc0000b0700)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc00010e1c0, 0xc0000b0700)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc000090f00, 0x817780, 0xc000084540)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:27 http: panic serving 127.0.0.1:46958: open rcs/www-new/form_main.html: no such file or directory
+goroutine 25 [running]:
+net/http.(*conn).serve.func1(0xc000090fa0)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc0000777a0)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc00010e2a0, 0xc0000b0800)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc00010e2a0, 0xc0000b0800)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc00010e2a0, 0xc0000b0800)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc00010e2a0, 0xc0000b0800)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc000090fa0, 0x817780, 0xc000084640)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:27 http: panic serving 127.0.0.1:46960: open rcs/www-new/form_main.html: no such file or directory
+goroutine 6 [running]:
+net/http.(*conn).serve.func1(0xc0001420a0)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc000140330)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc0001500e0, 0xc000146100)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc0001500e0, 0xc000146100)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc0001500e0, 0xc000146100)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc0001500e0, 0xc000146100)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc0001420a0, 0x817780, 0xc000056240)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:27 http: panic serving 127.0.0.1:46962: open rcs/www-new/form_main.html: no such file or directory
+goroutine 27 [running]:
+net/http.(*conn).serve.func1(0xc000091040)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc000077920)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc00010e380, 0xc0000b0900)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc00010e380, 0xc0000b0900)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc00010e380, 0xc0000b0900)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc00010e380, 0xc0000b0900)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc000091040, 0x817780, 0xc000084740)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:27 http: panic serving 127.0.0.1:46964: open rcs/www-new/form_main.html: no such file or directory
+goroutine 8 [running]:
+net/http.(*conn).serve.func1(0xc000142140)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc0000779e0)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc00010e460, 0xc000146200)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc00010e460, 0xc000146200)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc00010e460, 0xc000146200)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc00010e460, 0xc000146200)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc000142140, 0x817780, 0xc000056340)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:27 http: panic serving 127.0.0.1:46966: open rcs/www-new/form_main.html: no such file or directory
+goroutine 9 [running]:
+net/http.(*conn).serve.func1(0xc0001421e0)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc000077b00)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc00010e540, 0xc0000b0a00)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc00010e540, 0xc0000b0a00)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc00010e540, 0xc0000b0a00)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc00010e540, 0xc0000b0a00)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc0001421e0, 0x817780, 0xc0000848c0)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:27 http: panic serving 127.0.0.1:46968: open rcs/www-new/form_main.html: no such file or directory
+goroutine 10 [running]:
+net/http.(*conn).serve.func1(0xc000142280)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc000077c20)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc00010e620, 0xc0000b0b00)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc00010e620, 0xc0000b0b00)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc00010e620, 0xc0000b0b00)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc00010e620, 0xc0000b0b00)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc000142280, 0x817780, 0xc0000849c0)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:28 http: panic serving 127.0.0.1:46970: open rcs/www-new/form_main.html: no such file or directory
+goroutine 11 [running]:
+net/http.(*conn).serve.func1(0xc000142320)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc000140660)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc0001501c0, 0xc000146300)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc0001501c0, 0xc000146300)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc0001501c0, 0xc000146300)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc0001501c0, 0xc000146300)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc000142320, 0x817780, 0xc000056440)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:28 http: panic serving 127.0.0.1:46972: open rcs/www-new/form_main.html: no such file or directory
+goroutine 32 [running]:
+net/http.(*conn).serve.func1(0xc0000910e0)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc000140720)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc0001502a0, 0xc0000b0c00)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc0001502a0, 0xc0000b0c00)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc0001502a0, 0xc0000b0c00)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc0001502a0, 0xc0000b0c00)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc0000910e0, 0x817780, 0xc000084ac0)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:28 http: panic serving 127.0.0.1:46974: open rcs/www-new/form_main.html: no such file or directory
+goroutine 33 [running]:
+net/http.(*conn).serve.func1(0xc000091180)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc0001407e0)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc000150380, 0xc0000b0d00)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc000150380, 0xc0000b0d00)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc000150380, 0xc0000b0d00)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc000150380, 0xc0000b0d00)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc000091180, 0x817780, 0xc000084b40)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:28 http: panic serving 127.0.0.1:46976: open rcs/www-new/form_main.html: no such file or directory
+goroutine 34 [running]:
+net/http.(*conn).serve.func1(0xc000091220)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc000077ec0)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc00010e700, 0xc000146400)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc00010e700, 0xc000146400)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc00010e700, 0xc000146400)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc00010e700, 0xc000146400)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc000091220, 0x817780, 0xc0000566c0)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:28 http: panic serving 127.0.0.1:46978: open rcs/www-new/form_main.html: no such file or directory
+goroutine 15 [running]:
+net/http.(*conn).serve.func1(0xc0001423c0)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc0001409c0)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc000150460, 0xc000146500)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc000150460, 0xc000146500)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc000150460, 0xc000146500)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc000150460, 0xc000146500)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc0001423c0, 0x817780, 0xc000056740)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:28 http: panic serving 127.0.0.1:46980: open rcs/www-new/form_main.html: no such file or directory
+goroutine 36 [running]:
+net/http.(*conn).serve.func1(0xc0000912c0)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc000140a80)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc000150540, 0xc0000b0e00)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc000150540, 0xc0000b0e00)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc000150540, 0xc0000b0e00)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc000150540, 0xc0000b0e00)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc0000912c0, 0x817780, 0xc000084c40)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:28 http: panic serving 127.0.0.1:46982: open rcs/www-new/form_main.html: no such file or directory
+goroutine 37 [running]:
+net/http.(*conn).serve.func1(0xc000091360)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc000140b40)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc000150620, 0xc0000b0f00)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc000150620, 0xc0000b0f00)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc000150620, 0xc0000b0f00)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc000150620, 0xc0000b0f00)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc000091360, 0x817780, 0xc000084cc0)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:28 http: panic serving 127.0.0.1:46984: open rcs/www-new/form_main.html: no such file or directory
+goroutine 38 [running]:
+net/http.(*conn).serve.func1(0xc000091400)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc000140c00)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc000150700, 0xc0000b1000)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc000150700, 0xc0000b1000)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc000150700, 0xc0000b1000)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc000150700, 0xc0000b1000)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc000091400, 0x817780, 0xc000084d40)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:28 http: panic serving 127.0.0.1:46986: open rcs/www-new/form_main.html: no such file or directory
+goroutine 39 [running]:
+net/http.(*conn).serve.func1(0xc0000914a0)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc000140cc0)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc0001507e0, 0xc0000b1100)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc0001507e0, 0xc0000b1100)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc0001507e0, 0xc0000b1100)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc0001507e0, 0xc0000b1100)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc0000914a0, 0x817780, 0xc000084e40)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:28 http: panic serving 127.0.0.1:46988: open rcs/www-new/form_main.html: no such file or directory
+goroutine 40 [running]:
+net/http.(*conn).serve.func1(0xc000091540)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc000140d80)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc0001508c0, 0xc0000b1200)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc0001508c0, 0xc0000b1200)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc0001508c0, 0xc0000b1200)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc0001508c0, 0xc0000b1200)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc000091540, 0x817780, 0xc000084f40)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:29 http: panic serving 127.0.0.1:46990: open rcs/www-new/form_main.html: no such file or directory
+goroutine 41 [running]:
+net/http.(*conn).serve.func1(0xc0000915e0)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc00024a510)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc00010e7e0, 0xc0000b1300)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc00010e7e0, 0xc0000b1300)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc00010e7e0, 0xc0000b1300)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc00010e7e0, 0xc0000b1300)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc0000915e0, 0x817780, 0xc000085040)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:29 http: panic serving 127.0.0.1:46992: open rcs/www-new/form_main.html: no such file or directory
+goroutine 43 [running]:
+net/http.(*conn).serve.func1(0xc000091680)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc00024a690)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc00010e8c0, 0xc0000b1400)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc00010e8c0, 0xc0000b1400)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc00010e8c0, 0xc0000b1400)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc00010e8c0, 0xc0000b1400)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc000091680, 0x817780, 0xc0000851c0)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:29 http: panic serving 127.0.0.1:46994: open rcs/www-new/form_main.html: no such file or directory
+goroutine 55 [running]:
+net/http.(*conn).serve.func1(0xc000142460)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc000140f00)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc0001509a0, 0xc000146600)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc0001509a0, 0xc000146600)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc0001509a0, 0xc000146600)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc0001509a0, 0xc000146600)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc000142460, 0x817780, 0xc000056ac0)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:29 http: panic serving 127.0.0.1:46996: open rcs/www-new/form_main.html: no such file or directory
+goroutine 45 [running]:
+net/http.(*conn).serve.func1(0xc000091720)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc00024a810)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc00010e9a0, 0xc0000b1600)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc00010e9a0, 0xc0000b1600)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc00010e9a0, 0xc0000b1600)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc00010e9a0, 0xc0000b1600)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc000091720, 0x817780, 0xc0000852c0)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:29 http: panic serving 127.0.0.1:46998: open rcs/www-new/form_main.html: no such file or directory
+goroutine 57 [running]:
+net/http.(*conn).serve.func1(0xc000142500)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc00024a8d0)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc00010ea80, 0xc000146700)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc00010ea80, 0xc000146700)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc00010ea80, 0xc000146700)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc00010ea80, 0xc000146700)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc000142500, 0x817780, 0xc000056bc0)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:29 http: panic serving 127.0.0.1:47000: open rcs/www-new/form_main.html: no such file or directory
+goroutine 58 [running]:
+net/http.(*conn).serve.func1(0xc0001425a0)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc00024a990)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc00010eb60, 0xc000146800)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc00010eb60, 0xc000146800)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc00010eb60, 0xc000146800)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc00010eb60, 0xc000146800)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc0001425a0, 0x817780, 0xc000056c40)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:29 http: panic serving 127.0.0.1:47002: open rcs/www-new/form_main.html: no such file or directory
+goroutine 59 [running]:
+net/http.(*conn).serve.func1(0xc000142640)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc000141200)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc000150a80, 0xc000146900)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc000150a80, 0xc000146900)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc000150a80, 0xc000146900)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc000150a80, 0xc000146900)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc000142640, 0x817780, 0xc000056cc0)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:29 http: panic serving 127.0.0.1:47004: open rcs/www-new/form_main.html: no such file or directory
+goroutine 49 [running]:
+net/http.(*conn).serve.func1(0xc0000917c0)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc00024ab10)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc00010ec40, 0xc0000b1700)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc00010ec40, 0xc0000b1700)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc00010ec40, 0xc0000b1700)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc00010ec40, 0xc0000b1700)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc0000917c0, 0x817780, 0xc0000854c0)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:29 http: panic serving 127.0.0.1:47006: open rcs/www-new/form_main.html: no such file or directory
+goroutine 61 [running]:
+net/http.(*conn).serve.func1(0xc0001426e0)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc000141380)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc000150b60, 0xc000146a00)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc000150b60, 0xc000146a00)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc000150b60, 0xc000146a00)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc000150b60, 0xc000146a00)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc0001426e0, 0x817780, 0xc000056dc0)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:29 http: panic serving 127.0.0.1:47008: open rcs/www-new/form_main.html: no such file or directory
+goroutine 67 [running]:
+net/http.(*conn).serve.func1(0xc000091860)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc0001414a0)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc000150c40, 0xc000146b00)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc000150c40, 0xc000146b00)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc000150c40, 0xc000146b00)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc000150c40, 0xc000146b00)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc000091860, 0x817780, 0xc000056ec0)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:35 http: panic serving 127.0.0.1:47014: open rcs/www-new/form_main.html: no such file or directory
+goroutine 64 [running]:
+net/http.(*conn).serve.func1(0xc000142780)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc00024acf0)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc00010ed20, 0xc000146c00)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc00010ed20, 0xc000146c00)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc00010ed20, 0xc000146c00)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc00010ed20, 0xc000146c00)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc000142780, 0x817780, 0xc000056fc0)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:35 http: panic serving 127.0.0.1:47016: open rcs/www-new/form_main.html: no such file or directory
+goroutine 65 [running]:
+net/http.(*conn).serve.func1(0xc000142820)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc000141710)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc000150d20, 0xc000146d00)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc000150d20, 0xc000146d00)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc000150d20, 0xc000146d00)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc000150d20, 0xc000146d00)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc000142820, 0x817780, 0xc000057040)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:35 http: panic serving 127.0.0.1:47018: open rcs/www-new/form_main.html: no such file or directory
+goroutine 70 [running]:
+net/http.(*conn).serve.func1(0xc0000919a0)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc00024ae70)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc00010ee00, 0xc0000b1900)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc00010ee00, 0xc0000b1900)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc00010ee00, 0xc0000b1900)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc00010ee00, 0xc0000b1900)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc0000919a0, 0x817780, 0xc0000856c0)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:35 http: panic serving 127.0.0.1:47020: open rcs/www-new/form_main.html: no such file or directory
+goroutine 83 [running]:
+net/http.(*conn).serve.func1(0xc0001428c0)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc00024af30)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc00010eee0, 0xc000146e00)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc00010eee0, 0xc000146e00)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc00010eee0, 0xc000146e00)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc00010eee0, 0xc000146e00)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc0001428c0, 0x817780, 0xc000057180)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:35 http: panic serving 127.0.0.1:47022: open rcs/www-new/form_main.html: no such file or directory
+goroutine 84 [running]:
+net/http.(*conn).serve.func1(0xc000142960)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc000141950)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc000150e00, 0xc000146f00)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc000150e00, 0xc000146f00)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc000150e00, 0xc000146f00)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc000150e00, 0xc000146f00)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc000142960, 0x817780, 0xc000057200)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:35 http: panic serving 127.0.0.1:47024: open rcs/www-new/form_main.html: no such file or directory
+goroutine 73 [running]:
+net/http.(*conn).serve.func1(0xc000091a40)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc00024b0b0)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc00010efc0, 0xc0000b1a00)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc00010efc0, 0xc0000b1a00)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc00010efc0, 0xc0000b1a00)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc00010efc0, 0xc0000b1a00)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc000091a40, 0x817780, 0xc000085840)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:35 http: panic serving 127.0.0.1:47026: open rcs/www-new/form_main.html: no such file or directory
+goroutine 75 [running]:
+net/http.(*conn).serve.func1(0xc000091ae0)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc00024b230)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc00010f0a0, 0xc0000b1b00)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc00010f0a0, 0xc0000b1b00)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc00010f0a0, 0xc0000b1b00)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc00010f0a0, 0xc0000b1b00)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc000091ae0, 0x817780, 0xc000085940)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:35 http: panic serving 127.0.0.1:47028: open rcs/www-new/form_main.html: no such file or directory
+goroutine 86 [running]:
+net/http.(*conn).serve.func1(0xc000142a00)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc000141ad0)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc000150ee0, 0xc000147000)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc000150ee0, 0xc000147000)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc000150ee0, 0xc000147000)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc000150ee0, 0xc000147000)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc000142a00, 0x817780, 0xc000057300)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:35 http: panic serving 127.0.0.1:47030: open rcs/www-new/form_main.html: no such file or directory
+goroutine 77 [running]:
+net/http.(*conn).serve.func1(0xc000091b80)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc000141b90)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc000150fc0, 0xc0000b1c00)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc000150fc0, 0xc0000b1c00)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc000150fc0, 0xc0000b1c00)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc000150fc0, 0xc0000b1c00)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc000091b80, 0x817780, 0xc000085a40)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/11/30 21:58:35 http: panic serving 127.0.0.1:47032: open rcs/www-new/form_main.html: no such file or directory
+goroutine 78 [running]:
+net/http.(*conn).serve.func1(0xc000091c20)
+	/usr/lib/go-1.11/src/net/http/server.go:1774 +0xd0
+panic(0x755660, 0xc00024b410)
+	/usr/lib/go-1.11/src/runtime/panic.go:513 +0x1b9
+html/template.Must(...)
+	/usr/lib/go-1.11/src/html/template/template.go:372
+main.main.func1(0x817500, 0xc00010f180, 0xc000147100)
+	/home/papa/ScienceWork/Science-Software-dev/rcs/src/rcs-server-new.go:166 +0x25b
+net/http.HandlerFunc.ServeHTTP(0x7cc948, 0x817500, 0xc00010f180, 0xc000147100)
+	/usr/lib/go-1.11/src/net/http/server.go:1993 +0x44
+net/http.(*ServeMux).ServeHTTP(0xa77fa0, 0x817500, 0xc00010f180, 0xc000147100)
+	/usr/lib/go-1.11/src/net/http/server.go:2390 +0x127
+net/http.serverHandler.ServeHTTP(0xc000078f70, 0x817500, 0xc00010f180, 0xc000147100)
+	/usr/lib/go-1.11/src/net/http/server.go:2770 +0xab
+net/http.(*conn).serve(0xc000091c20, 0x817780, 0xc000057480)
+	/usr/lib/go-1.11/src/net/http/server.go:1876 +0x646
+created by net/http.(*Server).Serve
+	/usr/lib/go-1.11/src/net/http/server.go:2880 +0x2f5
+2022/12/05 01:25:52 1.html
+2022/12/05 01:25:52 style.css
