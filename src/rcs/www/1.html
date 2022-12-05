@@ -20,37 +20,37 @@
             <span class="links_name">Мониторинг</span>
           </a>
         <li>
-          <a href="123">
+          <a onclick="update_content('list');">
             <i class='bx bx-list-ul' ></i>
             <span class="links_name">Список ресурсов</span>
           </a>
         </li>
         <li>
-          <a href="#">
+          <a onclick="update_content('add'); document.querySelector('.active').classList.remove('active'); this.classList.add('active');">
             <i class='bx bx-folder-plus' ></i>
             <span class="links_name">Добавить новый ресурс</span>
           </a>
         </li>
         <li>
-          <a href="#">
+          <a onclick="update_content('log');">
             <i class='bx bx-book-content' ></i>
             <span class="links_name">Просмотр журнала</span>
           </a>
         </li>
         <li>
-          <a href="#">
+          <a onclick="update_content('snapshot');">
             <i class='bx bx-camera' ></i>
             <span class="links_name">Снимки</span>
           </a>
         </li>
         <li>
-          <a href="#">
+          <a onclick="update_content('conf');">
             <i class='bx bx-cog' ></i>
             <span class="links_name">Настройки</span>
           </a>
         </li>
         <li class="log_out">
-          <a href="#">
+          <a href="/">
             <i class='bx bx-log-out'></i>
             <span class="links_name">Выход</span>
           </a>
@@ -82,10 +82,11 @@
           <div class="overview-boxes">
 
               <div class="box">
-                  <div class="right-side" id="test">
+                  <div class="right-side">
                      <div class="title">Состояние пула</div>
                      <div class="box-topic">cвободное место</div>
                      <div class="number">15 Гб</div>
+                     <div id="test"></div>
                   </div>
               </div>
 
@@ -121,7 +122,7 @@
 
    var rq = new XMLHttpRequest();
 
-   function update_test(url) {
+   function update_content(url) {
       rq.open('GET', url, 1);
       rq.responseType = 'text';
       rq.onload = function() {
@@ -131,7 +132,6 @@
       // alert(rq.response);
    }
 
-   update_test('state');
    let sidebar = document.querySelector(".sidebar");
    let sidebarBtn = document.querySelector(".sidebarBtn");
    sidebarBtn.onclick = function() {
@@ -139,6 +139,7 @@
       if(sidebar.classList.contains("active")) { sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right"); }
       else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
    }
+   
 </script>
 
 </body>
